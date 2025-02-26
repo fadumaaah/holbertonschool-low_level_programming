@@ -21,6 +21,8 @@ void times_table(void)
 			product = number * multiplier;
 			if (product == 0)
 			{
+				_putchar(' ');
+				_putchar(' ');
 				_putchar(product + '0');
 			}
 			else if (product < 10)

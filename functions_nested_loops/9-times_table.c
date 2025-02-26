@@ -22,21 +22,19 @@ void times_table(void)
 			if (product < 10)
 			{
 				_putchar(product + '0');
-				_putchar(',');
-				_putchar(' ');
-			}
-			else if (product < 81)
-			{
-				_putchar((product / 10) + '0');
-				_putchar((product % 10) + '0');
-				_putchar(',');
-				_putchar(' ');
 			}
 			else
 			{
 				_putchar((product / 10) + '0');
 				_putchar((product % 10) + '0');
 			}
+
+			if (multiplier < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
+		_putchar('\n');
 	}
 }

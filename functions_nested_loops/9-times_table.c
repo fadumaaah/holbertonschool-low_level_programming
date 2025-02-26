@@ -21,8 +21,6 @@ void times_table(void)
 			product = number * multiplier;
 			if (product == 0)
 			{
-				_putchar(' ');
-				_putchar(' ');
 				_putchar(product + '0');
 			}
 			else if (product < 10)
@@ -31,7 +29,7 @@ void times_table(void)
 				_putchar(' ');
 				_putchar(product + '0');
 			}
-			else
+			else if (product < 100)
 			{
 				_putchar(' ');
 				_putchar((product / 10) + '0');

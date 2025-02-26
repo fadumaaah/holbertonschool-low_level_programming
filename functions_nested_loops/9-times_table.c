@@ -19,7 +19,11 @@ void times_table(void)
 		for (multiplier = 0; multiplier <= 9; multiplier++)
 		{
 			product = number * multiplier;
-			if (product < 10)
+			if (product == 0)
+			{
+				_putchar(product + '0');
+			}
+			else if (product < 10)
 			{
 				_putchar(' ');
 				_putchar(' ');
@@ -27,6 +31,7 @@ void times_table(void)
 			}
 			else
 			{
+				_putchar(' ');
 				_putchar((product / 10) + '0');
 				_putchar((product % 10) + '0');
 			}
@@ -34,7 +39,6 @@ void times_table(void)
 			if (multiplier < 9)
 			{
 				_putchar(',');
-				_putchar(' ');
 			}
 		}
 		_putchar('\n');

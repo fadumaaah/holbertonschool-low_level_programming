@@ -7,7 +7,7 @@
  * @a: integer 1 to multiply
  * @b: integer 2 to multiply
  *
- *  Return: Always 0
+ *  Return: Product of a * b
  *
  */
 
@@ -16,5 +16,5 @@ int mul(int a, int b)
 	int n = a * b;
 
 	printf("%d", n);
-	return (0);
+	return (n);
 }

@@ -23,7 +23,7 @@ void more_numbers(void)
 		{
 			_putchar((num / 10) + '0');
 		}
-		_putchar(num + '0');
+		_putchar((num % 10) + '0');
 		num = num + 1;
 		}
 		_putchar('\n');

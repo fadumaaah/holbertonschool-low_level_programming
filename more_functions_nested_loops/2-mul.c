@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * mul - Multiply two integers print result
+ * mul - Multiply two integers and return result
  *
  * @a: integer 1 to multiply
  * @b: integer 2 to multiply
@@ -13,6 +13,5 @@
 
 int mul(int a, int b)
 {
-	printf("%d", a * b);
-	return (0);
+	return (a * b);
 }

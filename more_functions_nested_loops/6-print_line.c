@@ -21,12 +21,13 @@ void print_line(int n)
 	{
 		_putchar('\n');
 	}
-
-	while (start < n)
+	else
 	{
+		while (start < n)
+		{
 		_putchar('_');
 		start = start + 1;
+		}
+		_putchar('\n');
 	}
-
-	_putchar('\n');
 }

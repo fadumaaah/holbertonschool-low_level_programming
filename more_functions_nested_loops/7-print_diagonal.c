@@ -25,7 +25,7 @@ void print_diagonal(int n)
 		while (vert < n)
 		{
 			horz = 0;
-			while (horz <= vert)
+			while (horz < vert)
 			{
 				_putchar(' ');
 				horz = horz + 1;

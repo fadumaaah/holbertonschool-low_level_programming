@@ -24,12 +24,12 @@ void print_diagonal(int n)
 	{
 		while (vert < n)
 		{
+			horz = 0;
 			while (horz <= vert)
 			{
 				_putchar(' ');
 				horz = horz + 1;
 			}
-			horz = 0;
 			_putchar('\\');
 			_putchar('\n');
 			vert = vert + 1;

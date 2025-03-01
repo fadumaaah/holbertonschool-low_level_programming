@@ -17,11 +17,6 @@ int main(void)
 
 	while (n <= 100)
 	{
-		if (n < 100)
-		{
-			printf(" ");
-		}
-
 		if ((n % 3 == 0) && (n % 5 == 0))
 		{
 			printf("FizzBuzz");
@@ -38,6 +33,13 @@ int main(void)
 		{
 			printf("%d", n);
 		}
-	n = n + 1;
+
+		if (n < 100)
+		{
+			printf(" ");
+		}
+		n = n + 1;
 	}
+
+	return (0);
 }

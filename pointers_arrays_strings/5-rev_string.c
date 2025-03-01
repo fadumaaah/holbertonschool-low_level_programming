@@ -17,10 +17,11 @@ void rev_string(char *s)
 		length++;
 	}
 
-	while (length > 0)
+	for (int i = 0; i < length / 2; i++)
 	{
-		_putchar(s[length - 1]);
-		length--;
+		s[i] = s[i] + s[length - i - 1]; // Add first and last value to gether
+		s[length - i - 1] = s[i] - s[length - i - 1]; // minuses value to get original value
+		s[i] = s[i] - s[length - i - 1]; // swaps values
 	}
 
 }

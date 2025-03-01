@@ -24,7 +24,7 @@ void print_square(int size)
 		while (vert < size)
 		{
 			horz = 0;
-			while (horz < vert)
+			while (horz < size)
 			{
 				_putchar('#');
 				horz = horz + 1;

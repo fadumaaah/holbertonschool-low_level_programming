@@ -16,16 +16,17 @@ void print_line(int n)
 {
 	int start = 0;
 
+
+	if (n <= 0)
+	{
+		_putchar('\n');
+	}
+
 	while (start < n)
 	{
-		if (n <= 0)
-		{
-			_putchar('\n');
-		}
-		else
-		{
-			_putchar('_');
-			start = start + 1;
-		}
+		_putchar('_');
+		start = start + 1;
 	}
+
+	_putchar('\n');
 }

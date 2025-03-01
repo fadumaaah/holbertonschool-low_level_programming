@@ -31,7 +31,7 @@ void print_diagonal(int n)
 			}
 			horz = 0;
 			_putchar('\\');
-			_putchar('\n);
+			_putchar('\n');
 			vert = vert + 1;
 		}
 	}

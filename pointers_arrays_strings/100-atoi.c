@@ -17,7 +17,7 @@
 int _atoi(char *s)
 {
 	int index = 0;
-	int result = 0;
+	unsigned int result = 0;
 	int sign = 1;
 
 	while (s[index] == ' ') /* Skip spaces*/
@@ -40,11 +40,5 @@ int _atoi(char *s)
 	}
 
 	/* Apply negative*/
-
-	result = result * sign;
-	return (result);
-
-
-
-
+	return (result * sign);
 }

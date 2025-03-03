@@ -2,23 +2,33 @@
 #include <stdio.h>
 
 /**
- * print_array - print n element of an array of integers, followed by new line
+ * puts_half - Prints a second half of string, if string odd round up
  *
- * @n: number of elements to print
- *
- * @a:Pointer to the array of integers
+ * @str : String to print
  *
  */
 
-void print_array(int *a, int n)
+void puts_half(char *str)
 {
+	int length = 0;
 	int i;
 
-	for (i = 0; i < n; i++)
+	while (str[length] != '\0')
 	{
-		printf("%d", a[i]);
-		if (i < (n - 1))
-			printf(", ");
+		length++;
 	}
-	printf("\n");
+
+	if (length % 2 == 0)
+	{
+		for (i = length / 2; i < length; i++)
+			_putchar(str[i]);
+	}
+	else
+	{
+		for (i = (length + 1) / 2; i < length; i++)
+			_putchar(str[i]);
+	}
+
+	_putchar('\n');
+
 }

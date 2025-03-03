@@ -40,5 +40,5 @@ int _atoi(char *s)
 	}
 
 	/* Apply negative*/
-	return (result * sign);
+	return (int)(result * sign);
 }

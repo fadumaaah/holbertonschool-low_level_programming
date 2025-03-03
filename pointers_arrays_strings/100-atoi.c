@@ -29,8 +29,8 @@ int _atoi(char *s)
 		if (s[index] == '-')
 		{
 			sign = sign * -1;
+			index++;
 		}
-		index++;
 	}
 
 	while (s[index] >= '0' && s[index] <= '9') /* Account for numbers*/

@@ -19,11 +19,8 @@ void puts2(char *str)
 		{
 			_putchar(*str);
 		}
-		else
-		{
-			str++;
-			index++;
-		}
+		str++;
+		index++;
 	}
 	_putchar('\n');
 

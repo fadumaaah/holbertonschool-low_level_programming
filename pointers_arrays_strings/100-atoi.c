@@ -18,23 +18,30 @@ int _atoi(char *s)
 {
 	int index = 0;
 	int result = 0;
+	int sign = 1;
 
 	while (s[index] == ' ') /* Skip spaces*/
 		index++;
 
 	if (s[index] == '-') /* Account for - or + */
 	{
-		result = result * -1;
+		sign = -1;
 		index++;
 	}
 	else
 		index++;
 
-	while (s[index] >= '0' && s[index] <= 9) /* Account for numbers*/
+	while (s[index] >= '0' && s[index] <= '9') /* Account for numbers*/
 	{
-		result = result * 10 + (s[index] - '0');
+		result = result * 10;
+		result = result + (s[index] - '0');
 		index++;
 	}
+
+	/* Apply negative*/
+
+	result = result * sign;
+
 
 	if (result == 0)
 		return (0);

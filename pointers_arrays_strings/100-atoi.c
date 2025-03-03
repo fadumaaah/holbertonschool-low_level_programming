@@ -33,8 +33,7 @@ int _atoi(char *s)
 
 	while (s[index] >= '0' && s[index] <= '9') /* Account for numbers*/
 	{
-		result = result * 10;
-		result = result + (s[index] - '0');
+		result = result * 10 + (s[index] - '0');
 		index++;
 	}
 

@@ -16,29 +16,23 @@
 
 int _atoi(char *s)
 {
-	int index = 0;
 	unsigned int result = 0;
 	int sign = 1;
 
-	while (s[index] == ' ') /* Skip spaces*/
-		index++;
-
-	while (s[index] == '-' || (s[index] == '+'))
-	{
-		/* Account for - or + */
-		if (s[index] == '-')
-		{
+	do {
+		/*Skip spaces*/
+		if (*s == '-')
 			sign = sign * -1;
-			index++;
-		}
-	}
 
-	while (s[index] >= '0' && s[index] <= '9') /* Account for numbers*/
-	{
-		result = result * 10 + (s[index] - '0');
-		index++;
-	}
+		/*Convert digits to Int*/
+		else if (*s >= '0' && *s <= '9')
+			result = result * 10 + (*s - '0');
 
-	/* Apply negative*/
-	return ((int)(result * sign));
+		/*Only account for numbers if not then disregard*/
+		else if (result > 0)
+			break;
+	} while (*s++);
+	/*make result positive or negative*/
+	return (result * sign);
+
 }

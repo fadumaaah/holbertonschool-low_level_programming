@@ -23,12 +23,15 @@ int _atoi(char *s)
 	while (s[index] == ' ') /* Skip spaces*/
 		index++;
 
-	if (s[index] == '-') /* Account for - or + */
+	while (s[index] == '-' || (s[index] == '+'))
 	{
-		sign = -1;
+		/* Account for - or + */
+		if (s[index] == '-')
+		{
+			sign = sign * -1;
+		}
 		index++;
-	} else if (s[index] == '+')
-		index++;
+	}
 
 	while (s[index] >= '0' && s[index] <= '9') /* Account for numbers*/
 	{

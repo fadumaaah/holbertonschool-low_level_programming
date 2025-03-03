@@ -40,12 +40,7 @@ int _atoi(char *s)
 	/* Apply negative*/
 
 	result = result * sign;
-
-
-	if (result == 0)
-		return (0);
-	else
-		return (result);
+	return (result);
 
 
 

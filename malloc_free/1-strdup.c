@@ -14,20 +14,31 @@
 char *_strdup(char *str)
 {
 	char *s;
-	size_t length;
+	int i;
+	size_t length = 0;
 
 	if (str == NULL)
 		return (NULL);
 
-	length = strlen(str) + 1;
+	while (*str != '\0')
+	{
+		length++;	
+	}
+
+	length = length + 1;
 
 	s  = malloc(length * sizeof(char));
+
+	while (str[i] != '\0')
+	{
+		s[i] = str[i];
+		i++;
+	}
 
 	if (s == NULL)
 		return (NULL);
 
-	strcpy (s, str);
 
-	return s;
+	return (s);
 
 }

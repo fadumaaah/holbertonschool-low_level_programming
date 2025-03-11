@@ -3,8 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-/*
- *_str_concat -  Functation that concatentates two strings
+/**
+ * str_concat -  Functation that concatentates two strings
  *
  * @s1: First string
  * @s2: Second string
@@ -16,7 +16,7 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char concat;
+	char *concat;
 	unsigned int length1 = 0;
 	unsigned int length2 = 0;
 	unsigned int i = 0;
@@ -36,33 +36,16 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	concat = malloc((length1 + length2 + 1) * sizeof(char));
-
-}
-
-char *_strdup(char *str)
-{
-	char *s;
-	int i;
-	int length = 0;
-
-	if (str == NULL)
+	if (concat == NULL)
 		return (NULL);
 
-	while (str[length] != '\0')
-	{
-		length++;
-	}
+	for (i = 0; i < length1; i++)
+		concat[i] = s1[i];
 
-	length = length + 1;
+	for (j = 0; j < length2; j++, i++)
+		concat[i] = s2[j];
 
-	s  = malloc(length * sizeof(char));
-
-	if (s == NULL)
-		return (NULL);
-
-	for (i = 0; i < length; i++)
-		s[i] = str[i];
-
-	return (s);
+	concat[i] = '\0';
+	return (concat);
 
 }

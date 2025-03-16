@@ -1,11 +1,57 @@
 #include <stdio.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
- * 
+ * _str_length - Calculate length of string
  *
+ * @str: String length to calculate
  *
+ * Return: Length of string
+ */
+
+int _str_length(char *str)
+{
+	int length = 0;
+
+	while (str[length] != '\0')
+		length++;
+
+	return (length);
+}
+
+/**
+ * str_copy - copies string from source to destination
  *
+ * @dest: copied string destination
+ * @src: original string to copy
+ *
+ * Return: Pointer to dest
+ */
+
+
+char *str_copy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i] = '\0';
+	return (dest);
+
+}
+
+/**
+ * new_dog - create new dog and allocate memory for name & owner
+ *
+ * @name: pointer to dogs name
+ * @age: value of dogs age
+ * @owner: pointer to dogs owner
+ *
+ * Return: pointer to new_dog structure or null if failure
  */
 
 
@@ -14,13 +60,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *dog;
 	char *name_cpy;
 	char *owner_cpy;
-	int index;
-	int n = 0; o = 0;
 
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 	{
-		free(dog);
 		return (NULL);
 	}
 
@@ -30,26 +73,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/*Calculate length of string*/
-	
-	while (name[n] != '\0')
-	{
-		n++;
-	}
-
-	while (owner[o] != '\0')
-	{
-		o++;
-	}
-
-	name_cpy = malloc(n + 1);
+	name_cpy = malloc((_str_length(name)) + 1);
 	if (name_cpy == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
 
-	owner_cpy = malloc (o + 1);
+	owner_cpy = malloc((_str_length(owner)) + 1);
 	if (owner_cpy == NULL)
 	{
 		free(name_cpy);
@@ -57,21 +88,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/*String copy*/
-
-	int index;
-
-	for (index = 0; index < o; index++)
-		owner_cpy[index] = owner[index];
-	owner_cpy[o] = '\0';
-
-
-	for (index = 0; index < n; index++)
-		name_cpy[index] = name[index];
-	name_cpy[n] = '\0';
-
-	/* Set new values*/
-
+	str_copy(name_cpy, name);
+	str_copy(owner_cpy, owner);
 	dog->name = name_cpy;
 	dog->age = age;
 	dog->owner = owner_cpy;

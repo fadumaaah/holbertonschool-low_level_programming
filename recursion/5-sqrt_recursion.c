@@ -9,7 +9,6 @@
  *
  */
 
-int checkroot(int n, int root);
 
 int _sqrt_recursion(int n)
 {
@@ -19,14 +18,13 @@ int _sqrt_recursion(int n)
 	return (checkroot(n, 1)); /*start with 1*/
 }
 
-
 /**
  * checkroot - check if guess is natural square root
  *
  * @root: current guess of square root
- * @n: integer to find square of
+ * @n: integer to find square root
  *
- * Return: squareroot if found, else return -1
+ * Return: squareroot if found, else return -1;
  */
 
 int checkroot(int n, int root)

@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (argc < 3)
+	if (argc != 4)
 	{
 		/* if the number of arguments is wrong*/
 		printf("Error\n");

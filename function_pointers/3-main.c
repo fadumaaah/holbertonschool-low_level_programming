@@ -18,18 +18,17 @@ int main(int argc, char *argv[])
 	int b = atoi(argv[3]);
 	int (*op_func)(int, int) = get_op_func(argv[2]);
 
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	
 	if (op_func == NULL)
 	{
 		/* if the operator is not valud */
 		printf("Error\n");
 		exit(99);
-	}
-
-	if (argc != 4)
-	{
-		/* if the number of arguments is wrong*/
-		printf("Error\n");
-		exit(98);
 	}
 
 

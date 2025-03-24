@@ -18,7 +18,7 @@ char *leet(char *str)
 {
 	int i, j;
 	char letters[] = {'a', 'e', 'o', 't', 'l'};
-	char new_letters = {'4', '3', '0', '7', '1'};
+	char new_letters[] = {'4', '3', '0', '7', '1'};
 
 	for (i = 0; str[i] != '\0'; i++)
 	{

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 	b = atoi(argv[3]);
 	op_func = get_op_func(argv[2]);
 
-	if (op_func == NULL || strlen(argv[2]) > 1 )
+	if (strlen(argv[2]) != 1 || op_func == NULL)
 	{
 		/* if the operator is not value or multiple values */
 		printf("Error\n");
